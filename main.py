@@ -5,7 +5,9 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain.chains import LLMChain
 from langchain_groq import ChatGroq
-from langchain.prompts import PromptTemplate
+# from langchain.prompts import PromptTemplate
+from langchain_community.llms import OpenAI
+from langchain_core.prompts import PromptTemplate
 from typing import List, Dict
 import os
 import tempfile
@@ -59,7 +61,7 @@ def process_candidate_submission(resume_file, job_description: str) -> str:
         """
     )
     
-    chain = LLMChain(
+    chain = Deprecated since version 0.1.17: Use(
         llm=llm,
         prompt=prompt_template
     )
